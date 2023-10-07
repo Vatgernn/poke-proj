@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon List</title>
+</head>
+<body>
+    <h1>Pokemon List</h1>
+
+    <form method="POST">
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" value="{{ search_query }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pokemon in pokemon_list %}
+                <tr>
+                    <td>{{ pokemon.name }}</td>
+                    <td>{{ pokemon.url }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
